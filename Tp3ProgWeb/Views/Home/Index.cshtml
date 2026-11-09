@@ -1,0 +1,28 @@
+﻿@using System.Linq
+@model List<Tp2ProgWeb.Models.Parent>
+@{
+    
+}
+     <!-- Début du contenu -->
+<main class="container mt-">
+ <div class="GrosConteneur">
+    <h1 style="color:whitesmoke">Fonctions</h1>
+     <div class="row justify-content-between">
+    @foreach (var item in Model)
+    {
+        <div class="col 12 col lg-4" >
+            <div class="conteneur" id="Support">
+                <h2>@item.Nom</h2>
+                <img src=@item.ImageParent alt="@item.Nom">
+            <div class="descriptionOpérateur">
+                <strong>@item.Description</strong>
+
+            </div>
+            </div>   
+        </div>
+    }     
+  </div>
+      </div>
+</main>
+
+ 

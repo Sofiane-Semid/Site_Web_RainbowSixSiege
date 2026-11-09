@@ -1,0 +1,135 @@
+.carrefavoris{
+    padding: 5px;
+    position: relative;
+    width: 120px;
+    background-color: skyblue;
+    text-align: center;
+    color: white;
+}
+.nomAgentr a {
+    color: white;
+    text-decoration: none;
+}
+img {
+    height: 100px;
+    width: auto;
+    cursor: pointer;
+}
+.nav a {
+    color: pink;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.conteneur img {
+    width: auto;
+    height: 200px;
+}
+li{
+    color: black;
+}
+header{
+    background-color: black;
+    height: 100px;
+}
+h1{
+    text-align: center;
+}
+.conteneur {
+    border : 1px solid black;
+    display: inline-block;
+    width: 100%;
+    height: 550px;
+    padding: 15px;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.25);
+    text-align: center;
+    cursor: pointer;
+}
+.descriptionOpérateur {
+    padding: 10px;
+    position: absolute;
+    bottom: 170px;
+    margin-right: 10px;
+    height: 100px;
+    color:white;
+} 
+h1 { 
+    text-align: left;
+}
+.GrosConteneur{
+    height: auto;
+    width: auto;
+    background-color: rgba(255, 255, 255, 0.25);
+    padding: 20px;
+}
+#Support{
+    transition: 1s;
+}
+#Support:hover{
+    opacity: 1;
+    background-color: lightgreen;
+}
+#Anti-Gadget{
+    transition: 1s;
+}
+#Anti-Gadget:hover{
+    opacity: 1;
+    background-color: lightpink;
+}
+#Breach{
+    transition: 1s;
+}
+#Breach:hover{
+    opacity: 1;
+    background-color: skyblue;
+}
+.carre{
+    border : 1px solid black;
+    padding: 10px;
+    position: relative;
+    width: 300px;
+    background-color: gray;
+    text-align: center;
+}
+#Agent{
+    height: auto;
+    border : 3px solid black;
+    position: relative;
+}
+#AgentFavoris{
+    width: 300px;
+    height: 300px;
+    border : 3px solid black;
+    position: relative;
+}
+
+.nomAgentr{
+    color: white;
+    position: absolute;
+    background-color: black;
+    padding: 5px;
+    position: absolute;
+    bottom: 5px; /* Ajuste la position verticale */
+    right: 50%;
+    border-radius: 4px;
+    width: auto;
+    text-align: center;
+}
+
+.nomOpérateur{
+    position: absolute;
+    top:10px;
+    left:10px;
+    padding:10px;
+    background-color: black;
+    color:white;
+    opacity: 1;
+}
+.col{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    padding: 5px;
+}
+

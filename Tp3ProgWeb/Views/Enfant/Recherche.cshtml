@@ -1,0 +1,96 @@
+@model Tp2ProgWeb.ViewModels.PageRechercheViewModel
+@{
+    
+}
+<main class="container">
+    <div class="GrosConteneur">
+       
+        <div class="formulaire-recherche"> 
+            <div class="p-3 bg-light rounded">
+                <h2>Recherche d'opérateurs</h2>
+                <form asp-action="Filtrer" method="get">
+                    <!-- Recherche par mots-clés -->
+                    <div class="mb-3">
+                        <label for="keywords" class="form-label">Recherche par mots-clés :</label>
+                        <input type="text" class="form-control" id="keywords" name="MotsCles" value="@Model.Criteres.MotsCles" placeholder="Ex: Thermite, Valkyrie">
+                    </div>
+
+                    <!-- Niveau de difficulté -->
+                    <div class="mb-3">
+                        <label class="form-label">Niveau de difficulté :</label>
+                        <div class="d-flex">
+                           <input type="number" class="form-control" id="minDifficulty" name="MinNiveauDifficultés" placeholder="Min" value="@Model.Criteres.MinNiveauDifficultés">
+                           <input type="number" class="form-control" id="maxDifficulty" name="MaxNiveauDifficultés" placeholder="Max" value="@Model.Criteres.MaxNiveauDifficultés">
+
+
+
+                           
+                        </div>
+                    </div>
+
+                    <!-- Type d'opérateur -->
+                    <div class="mb-3">
+                        <label for="operatorType" class="form-label">Camp :</label>
+                        <select class="form-select" id="operatorType" name="OperatorType">
+                        <option value="">Tous</option>
+                        <option value="Attaquant" Model.Criteres.OperatorType>Attaquant</option>
+                        <option value="Défenseur" Model.Criteres.OperatorType>Défenseur</option>
+                        </select>
+
+                    </div>
+    
+                    <!-- Fonctionnalités -->
+                    <div class="mb-3">
+                        <label class="form-label">Fonctions :</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="support" name="EstSupport" value="true" @(Model.Criteres.EstSupport ? "checked" : "")>
+                            <label class="form-check-label" for="support">Support</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="breacher" name="EstBreacher" value="true" @(Model.Criteres.EstBreacher ? "checked" : "")>
+                            <label class="form-check-label" for="breacher">Breacher</label>
+
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="antiGadget" name="EstAntiGadget" value="true" @(Model.Criteres.EstAntiGadget ? "checked" : "")>
+                            <label class="form-check-label" for="antiGadget">Anti-Gadget</label>
+                        </div>
+                    </div>
+
+                    <!-- Boutons -->
+                    <div class="d-flex justify-content-between">
+                        <button type="reset" class="btn btn-danger" id="resetButton">Réinitialiser</button>
+                        <button type="submit" class="btn btn-primary">Rechercher</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+      
+
+        <!-- Images et Nom -->
+         <h1 style="color:whitesmoke">Liste des opérateurs</h1>
+      <div class="row my-mb-3">
+           @foreach (var agent in Model.Resultat)
+           {
+               
+                 <div class=" col md-4 mb-3 ">
+                    <a href="/Enfant/Detail/@agent.Id">
+                        
+                    <img src="/@agent.ImageEnfant" id="Agent" alt="@agent.Nom">
+                        
+                    <div class="nomAgentr"> @agent.Nom </div>
+                    </a>
+                   
+
+                 </div>
+
+           }
+            </div>
+    </div>
+    
+
+    
+</main>
+    
+

@@ -1,0 +1,43 @@
+﻿@model List<Tp2ProgWeb.Models.Enfant>
+
+@{
+
+}
+<main class="container mt-3">
+    <h2 class="text-center text-white">MES PERSONNAGES FAVORIS</h2>
+   <p class="text-center text-white">Vous avez <strong>@Model.Count</strong> personnage(s) en favoris!</p>
+
+    <!-- Tableau -->
+    <table class="table table-dark ">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Opérateur</th>
+                <th>Fonction</th>
+                <th>Niveau de difficultés</th>
+                <th></th>
+            </tr>
+        </thead>
+    @foreach (var item in Model)
+    {
+            <tbody>
+                <tr>
+                    <td> <a href="/Enfant/Detail/@item.Id"><img src="/@item.ImageEnfant" alt="@item.Nom"></a></td>
+                    <td> <a href="/Enfant/Detail/@item.Id" class="text-white">@item.Nom</a></td>
+                    <td>@item.Fonction</td>
+                    <td>@item.NiveauDeDifficultés</td>
+                    
+                    <td>
+                        <form asp-controller="Favoris" asp-action="SupprimerUnEnfant" method="POST">
+                            <input type="hidden" name="id" value="@item.Id">
+                            <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+                        </form>
+                    </td>
+                </tr>
+
+            </tbody>
+    }
+    </table>
+    
+             <!-- Fin du Tableau -->
+        </main>
